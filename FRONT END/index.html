@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DEVFIX explains programming errors and suggests fixes.">
+  <title>TEAM XYZ| Coding Error Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="logo" href="#"><span>TEAM</span>XYZ</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#analyzer">Analyzer</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+    </div>
+    <a class="nav-cta" href="#analyzer">Fix an error <span>↗</span></a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="eyebrow">
+        <span class="pulse"></span>
+        YOUR AI-READY DEBUGGING COMPANION
+      </div>
+      <h1>Turn coding errors into<br>
+        <span>understandable solutions.</span>
+      </h1>
+      <p>
+        Paste an error, choose your programming language,
+        and understand what went wrong—and how to fix it.
+      </p>
+      <a class="primary-button" href="#analyzer">
+        Start debugging <span>→</span>
+      </a>
+      <div class="hero-meta">
+        <span>● 8 languages</span>
+        <span>● Beginner-friendly</span>
+        <span>● Clear explanations</span>
+      </div>
+    </div>
+    <div class="hero-orbit orbit-one"></div>
+    <div class="hero-orbit orbit-two"></div>
+  </section>
+
+  <!-- ERROR ANALYZER -->
+  <section class="analyzer-section section" id="analyzer">
+    <div class="section-heading">
+      <div class="eyebrow">01 / ERROR ANALYZER</div>
+      <h2>Let's understand the error.</h2>
+      <p>
+        Enter the error message below. DEVFIX will analyze
+        common errors and provide a practical starting point.
+      </p>
+    </div>
+
+    <div class="workspace">
+      <div class="input-panel">
+        <div class="panel-top">
+          <div><span class="status-dot"></span>
+            <strong>Input console</strong>
+          </div>
+          <button class="text-button" id="clearBtn" type="button">
+            Clear input
+          </button>
+        </div>
+
+        <label class="field-label" for="errorInput">
+          Error message
+        </label>
+        <textarea id="errorInput" spellcheck="false"
+          placeholder="Paste your error here...
+
+Example: NameError: name 'x' is not defined"></textarea>
+
+        <div class="input-bottom">
+          <div class="language-field">
+            <label class="field-label" for="language">
+              Programming language
+            </label>
+            <select id="language">
+              <option value="C">C</option>
+              <option value="C++">C++</option>
+              <option value="Java">Java</option>
+              <option value="Python" selected>Python</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="HTML">HTML</option>
+              <option value="CSS">CSS</option>
+              <option value="SQL">SQL</option>
+            </select>
+          </div>
+          <button class="primary-button analyze-button"
+            id="analyzeBtn" type="button">
+            Analyze error <span>↗</span>
+          </button>
+        </div>
+        <p class="privacy-note">
+          Tip: Include the full error message and line number
+          when available.
+        </p>
+      </div>
+
+      <!-- LOADING -->
+      <div class="loading hidden" id="loading" aria-live="polite">
+        <div class="spinner"></div>
+        <span>Analyzing your error…</span>
+      </div>
+
+      <!-- RESULTS -->
+      <section class="results hidden" id="result" aria-live="polite">
+        <div class="results-heading">
+          <div>
+            <div class="eyebrow">02 / ANALYSIS</div>
+            <h2 id="errorTitle">Error analysis</h2>
+          </div>
+          <span class="severity" id="severity">Detected</span>
+        </div>
+
+        <div class="result-grid">
+          <article class="result-card">
+            <div class="result-icon mint">✳</div>
+            <div>
+              <h3>What happened?</h3>
+              <p id="whatHappened"></p>
+            </div>
+          </article>
+
+          <article class="result-card">
+            <div class="result-icon violet">?</div>
+            <div>
+              <h3>Why did it happen?</h3>
+              <p id="whyHappened"></p>
+            </div>
+          </article>
+
+          <article class="result-card">
+            <div class="result-icon amber">⌁</div>
+            <div>
+              <h3>How can I fix it?</h3>
+              <p id="howFix"></p>
+            </div>
+          </article>
+        </div>
+
+        <article class="solution-card">
+          <div class="solution-top">
+            <div><span class="status-dot"></span>
+              <strong>Suggested solution</strong>
+            </div>
+            <button class="copy-button" id="copyBtn" type="button">
+              Copy code
+            </button>
+          </div>
+          <pre><code id="solution"></code></pre>
+          <p class="disclaimer">
+            Suggestions are based on common error patterns.
+            Review and test the fix with your complete code.
+          </p>
+        </article>
+      </section>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section features-section" id="features">
+    <div class="section-heading">
+      <div class="eyebrow">03 / BUILT FOR LEARNING</div>
+      <h2>Debug with understanding.</h2>
+      <p>
+        Designed to make debugging less intimidating
+        for students and developers.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="feature-symbol">⌕</div>
+        <h3>Clear explanations</h3>
+        <p>Understand what an error means in straightforward language.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-symbol">⌘</div>
+        <h3>Actionable fixes</h3>
+        <p>See example corrections and practical debugging steps.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-symbol">〈/〉</div>
+        <h3>Multiple languages</h3>
+        <p>Choose from C, C++, Java, Python, JavaScript, HTML, CSS, and SQL.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-symbol">↗</div>
+        <h3>Learning-first</h3>
+        <p>Focus on the cause of an issue, not only the final answer.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section section" id="about">
+    <div class="about-mark">D<span>F</span></div>
+    <div>
+      <div class="eyebrow">ABOUT DEVFIX</div>
+      <h2>Every error is a chance to learn.</h2>
+      <p>
+        DEVFIX is a web-based debugging helper that explains
+        common programming errors and provides examples to
+        help users investigate and fix their code.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a class="logo" href="#"><span>TEAM</span>XYZ</a>
+    <p>Turn coding errors into understandable solutions.</p>
+    <small>© 2026 DEVFIX · Learning project</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
